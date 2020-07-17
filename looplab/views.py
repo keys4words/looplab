@@ -7,7 +7,7 @@ def hello():
 
 @app.route('/contact-us/')
 def contact_us():
-    return '<h1>Contact Us</h1>'
+    return render_template('contact_test.html')
 
 @app.route('/about-us/')
 def about_us():

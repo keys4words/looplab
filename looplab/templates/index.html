@@ -5,6 +5,11 @@ LoopLab
 {% endblock title %}
 
 {% block content %}
-<h1>Content for index.html from block content</h1>
+<form method="POST">
+    {{ form.csrf_token }}
+    <input type="text" name="full_name" placeholder="Your name" id="">
+    <input type="email" name="email" id="" placeholder="yourmail@mail.com">
+    <input type="submit" value="Join">
+</form>
 
 {% endblock content %}

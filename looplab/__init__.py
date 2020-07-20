@@ -1,11 +1,14 @@
 from flask import Flask
 from flask_wtf.csrf import CSRFProtect
+from flask_sqlalchemy import SQLAlchemy
+
 from config import DevelopmentConfig
 
 app = Flask(__name__)
 csrt = CSRFProtect(app)
 
 app.config.from_object(DevelopmentConfig())
+db = SQLAlchemy(app)
 
 from .home.views import *
 from .views import *

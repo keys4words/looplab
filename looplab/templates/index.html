@@ -5,48 +5,12 @@ LoopLab
 {% endblock title %}
 
 {% block content %}
-<form method="POST">
-    {{ form.csrf_token }}
-    <div>
-        <label for="full_name">{{ form.full_name.label }}</label>
-        {{ form.full_name }}
-        {% if form.full_name.errors %}
-            <div class="alert alert-danger">
-                {% for error in form.full_name.errors %}
-                    <span class="mr-1">{{ error }}</span>
-                {% endfor %}        
-            </div>
-        {% endif %}
-    </div>
-    
-    <div>
-        <label for="email">{{ form.email.label }}</label>
-        {{ form.email }}
-        {% if form.email.errors %}
-            <div class="alert alert-danger">
-                {% for error in form.email.errors %}
-                    <span class="mr-1">{{ error }}</span>
-                {% endfor %}        
-            </div>
-        {% endif %}
-    </div>
-    <button class="btn btn-primary my-3" type="submit">Join Us!</button>
-</form>
-
 <header id="home-section">
     <div class="dark-overlay">
         <div class="home-inner container">
             <div class="row">
                 <div class="col-lg-8 d-none d-lg-block">
-                    <h1 class="display-4">Build <strong>social profiles</strong> and gain revenue
-                        <strong>profits</strong></h1>
-                    <div class="d-flex">
-                        <div class="p-4 align-self-start">
-                            <i class="fas fa-check fa-2x"></i>
-                        </div>
-                        <div class="p-4 align-self-end">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Nulla recusandae asperiores beatae, soluta ab quam dolore distinctio</div>
-                    </div>
+                    <h1 class="display-4">Build social profiles</h1>
                     <div class="d-flex">
                         <div class="p-4 align-self-start">
                             <i class="fas fa-check fa-2x"></i>
@@ -66,23 +30,32 @@ LoopLab
                     <div class="card bg-primary text-center card-form">
                         <div class="card-body">
                             <h3>Sign Up Today</h3>
-                            <p>Please fill out his form to register</p>
-                            <form>
+                            <p>Please fill out this form to subscribe</p>
+                            <form method="POST">
+                                {{ form.csrf_token }}
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Username">
+                                    <input type="text" class="form-control form-control-lg"
+                                        placeholder="Enter your name" name="full_name">
+                                    {% if form.full_name.errors %}
+                                    <div class="alert alert-danger">
+                                        {% for error in form.full_name.errors %}
+                                        <span class="mr-1">{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Email">
+                                    <input type="email" class="form-control form-control-lg"
+                                        placeholder="Enter your email" name="email">
+                                    {% if form.email.errors %}
+                                    <div class="alert alert-danger">
+                                        {% for error in form.email.errors %}
+                                        <span class="mr-1">{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg"
-                                        placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg"
-                                        placeholder="Confirm password">
-                                </div>
-                                <input type="submit" value="Submit" class="btn btn-outline-light btn-block">
+                                <input type="submit" value="Subscribe!" class="btn btn-outline-light btn-block">
                             </form>
                         </div>
                     </div>
@@ -91,7 +64,6 @@ LoopLab
         </div>
     </div>
 </header>
-
 <!-- EXPLORE HEAD -->
 <section id="explore-head-section">
     <div class="container">
@@ -111,7 +83,7 @@ LoopLab
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="img/explore-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+                <img src="static/img/explore-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
             </div>
             <div class="col-md-6">
                 <h3>Explore & Connect</h3>
@@ -159,7 +131,7 @@ LoopLab
     <div class="container">
         <div class="row">
             <div class="col-md-6 order-2">
-                <img src="img/create-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+                <img src="static/img/create-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
             </div>
             <div class="col-md-6 order-1">
                 <h3>Create Your Passion</h3>
@@ -207,7 +179,7 @@ LoopLab
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="img/share-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
+                <img src="static/img/share-section1.jpg" alt="" class="img-fluid mb-3 rounded-circle">
             </div>
             <div class="col-md-6">
                 <h3>Share What You Create</h3>

@@ -1,9 +1,10 @@
 from looplab import db
-
+from sqlalchemy import event
 
 class EmailSignup(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     full_name = db.Column(db.String(120), nullable=True)
+    content = db.Column(db.Text, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
     def save(self, commit=True):
@@ -32,5 +33,13 @@ class EmailSignup(db.Model):
             return True
         return False
 
-    def __str__(self):
-        return f"{self.id}: {self.full_name} with email {self.email}"
+
+@event.listens_for(EmailSignup, 'before_update')
+def email_signup_pre_update_signal(mapper, connection, target):
+    # target.full_name = target.full_name + ' working...'
+    pass
+
+
+@event.listens_for(EmailSignup, 'after_update')
+def email_signup_post_update_signal(mapper, connection, target):
+    assert target.id is not None

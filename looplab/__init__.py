@@ -14,7 +14,5 @@ migrate = Migrate(app, db)
 
 
 from .home.views import *
-from .views import *
-from .profiles.views import *
 
 # flask run --reload --debugger

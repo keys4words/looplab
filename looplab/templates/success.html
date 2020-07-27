@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<header id="home-section">
+    <div class="dark-overlay">
+        <div class="home-inner container">
+            <div class="row">
+                <div class="col">
+                    <p class="display-3 text-center mt-2">Welcome to our community, {{ data['full_name'] }}</p>
+                    <p class="h2  text-center">We send you confirm letter to your email {{ data['email'] }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock content %}

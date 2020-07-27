@@ -1,0 +1,1 @@
+web:gunicorn looplab:app --workers 3 -t 60

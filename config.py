@@ -14,7 +14,7 @@ class DevelopmentConfig(Config):
     db_path = os.path.join(os.path.dirname(__file__), 'db.sqlite3')
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(db_path)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    RECAPTCHA_USE_SSL = False
+    RECAPTCHA_USE_SSL = True
     RECAPTCHA_PUBLIC_KEY = '6Ld2PbcZAAAAAM_48s2z7lNkdO2qQwsCuNrHFBC0'
     RECAPTCHA_PRIVATE_KEY = '6Ld2PbcZAAAAAJyucCuts5o_FE4XFCjOeICojtgb'
     RECAPTCHA_OPTIONS = {'theme': 'white'}

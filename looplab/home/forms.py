@@ -23,7 +23,7 @@ class LandingForm(FlaskForm):
         render_kw={"class": "form-control", "placeholder": 'Your name'},
         validators=[validators.DataRequired(message='You need to input your email name'),
         validators.Email()])
-    # recapcha = RecaptchaField()
+    recapcha = RecaptchaField()
 
     def validate_email(self, field):
         _id = self.data.get('id', -1)

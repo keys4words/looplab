@@ -15,8 +15,8 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(db_path)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     RECAPTCHA_USE_SSL = False
-    RECAPTCHA_PUBLIC_KEY = '6LeYIbsSAAAAACRPIllxA7wvXjIE411PfdB2gt2J'
-    RECAPTCHA_PRIVATE_KEY = '6LeYIbsSAAAAAJezaIq3Ft_hSTo0YtyeFG-JgRtu'
+    RECAPTCHA_PUBLIC_KEY = '6Ld2PbcZAAAAAM_48s2z7lNkdO2qQwsCuNrHFBC0'
+    RECAPTCHA_PRIVATE_KEY = '6Ld2PbcZAAAAAJyucCuts5o_FE4XFCjOeICojtgb'
     RECAPTCHA_OPTIONS = {'theme': 'white'}
 
 class TestingConfig(Config):
